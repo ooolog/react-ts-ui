@@ -1,0 +1,337 @@
+@import './common/var.scss';
+@import './mixins/mixin.scss';
+
+@keyframes EtableToglle {
+    from {
+        height: auto;
+        overflow: hidden;
+    }
+
+    to {
+        height: auto;
+        overflow: auto;
+    }
+}
+
+@-webkit-keyframes EtableToglle {
+    from {
+
+        height: 40px;
+        overflow: hidden;
+    }
+
+    to {
+
+        height: auto;
+        overflow: auto;
+
+    }
+}
+
+@include b(etable1) {
+    .tabler-wrapper-win {
+        width: 100%;
+        margin: 0 auto;
+        overflow: auto;
+        position: relative;
+        /*max-height: 800px;*/
+        width: 1625px;
+    }
+
+    .tabler-wrapper-win table,
+    .tabler-wrapper-win .table {
+        border-spacing: 0;
+        border-collapse: collapse;
+        width: 100%;
+        position: relative;
+    }
+
+    .tabler-wrapper-win .table,
+    .tabler-wrapper-win .table12 {
+        display: table;
+        width: 100%;
+        border-collapse: collapse;
+        position: relative;
+    }
+
+    .tabler-wrapper-win .td-head-bg {
+        background-color: #E6EAEB;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 400;
+        color: rgba(121, 137, 148, 1);
+    }
+
+    .tabler-wrapper-win table .tds,
+    .tabler-wrapper-win .table .tds {
+        float: left;
+        top: 0;
+
+    }
+
+    .td-body,
+    .td-head {
+        .tds {
+            overflow: hidden;
+            padding: 10px;
+            // border-top: solid 1px $--color-table-border;
+            border-left: solid 1px $--color-table-border;
+
+            // border-bottom: solid 1px $--color-table-border;
+            &:first-child {
+                border-left: solid 1px transparent;
+            }
+        }
+
+        .i-cursor {
+            cursor: pointer;
+        }
+
+        .i-table-nodate {
+            text-align: center;
+            justify-content: center;
+            position: absolute;
+            background: rgba(255, 255, 255, .6);
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1000;
+
+            &-svg {
+                height: 100%;
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    .tabler-wrapper-win .tds-r {
+        border-radius: 4px;
+        border: solid 2px #DCDCDC;
+        margin-bottom: 5px;
+    }
+
+    .tabler-wrapper-win .t-checbox-index {
+        // text-indent: 15px;
+        text-align: left;
+    }
+
+    .width100 {
+        width: 100%;
+    }
+
+    .tabler-wrapper-win .tds-wi100 {
+        display: flex;
+        flex-wrap: inherit;
+        
+        &.i-table-border-none {
+            border-left: transparent !important;
+            border-right: transparent !important;
+            border-radius: 0;
+            &:hover{
+                border-radius: 0;
+            }
+            
+            .tds {
+                border: transparent !important;
+                .items5-1-c{
+                    border: transparent !important;
+                    .items5-1-c-pos{
+                        border: transparent !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .tabler-wrapper-win .tds-r,
+    .tabler-wrapper-win .td-head-bg {
+        border-radius: 4px;
+        border: solid 1px #f6f9ff;
+        margin-bottom: 5px;
+        min-height: 40px;
+        /* border:solid 2px transparent; */
+
+    }
+
+    .tabler-wrapper-win .table-w-fixed {
+        position: absolute;
+        height: 100%;
+        background: #fff;
+        z-index: 10;
+        box-shadow: -6px 0 6px -4px rgba(0, 0, 0, .15);
+
+    }
+
+    .tabler-wrapper-win .tds-fixed {
+        border: solid 1px #DCDCDC;
+        border-left: 0;
+        border-right: 0;
+        margin-top: -1px;
+    }
+
+    .table12 .tds-r:hover {
+        // border: solid 1px #DCDCDC;
+        background: rgba(238, 243, 255, 1);
+        border-radius: 4px;
+        // box-shadow: 0 0 3px $--color-primary-hover;
+
+    }
+
+    .tabler-wrapper-win .tds-r {
+        /*box-shadow: 0px 8px  0px #000;*/
+        border: solid 1px #DCDCDC;
+    }
+
+    .tabler-wrapper-win .cur-sor {
+        cursor: pointer;
+    }
+
+    .t-imgcenter {
+        display: -webkit-box;
+        -webkit-box-orient: horizontal;
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+
+        display: -moz-box;
+        -moz-box-orient: horizontal;
+        -moz-box-pack: center;
+        -moz-box-align: center;
+
+        display: -o-box;
+        -o-box-orient: horizontal;
+        -o-box-pack: center;
+        -o-box-align: center;
+
+        display: -ms-box;
+        -ms-box-orient: horizontal;
+        -ms-box-pack: center;
+        -ms-box-align: center;
+
+        box-orient: horizontal;
+        box-pack: center;
+        box-align: center;
+    }
+
+    .clearfix:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+
+    .items5-1-c {
+        display: grid;
+        position: sticky;
+        border-right: none !important;
+        border-top: solid 1px transparent !important;
+        &.i-table-col-pre{
+            border-bottom: transparent  !important;
+        }
+        .i-table-toogle {
+            color: $--color-primary-hover;
+            position: absolute;
+            background: #fff;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-content: center;
+            width: 100%;
+            border: solid 1px $--color-table-border;
+            border-bottom: solid 1px transparent;
+            border-left: solid 1px transparent;
+            cursor: pointer;
+            height: 30px;
+            line-height: 30px;
+            box-shadow: 0 0 3px $--color-table-header-bg;
+            background-color: rgba(238, 243, 255, 1);
+
+            &:hover {
+                background: #f1f5f6;
+            }
+
+            &.active {
+                box-shadow: 0 0 5px #63a8ec;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+        }
+
+        .items5-1-c-pos {
+            &.pos-active {
+                position: absolute;
+            }
+
+            &.pos-exclude-show {
+                position: relative;
+
+                .i-table-col-nodata {
+                    display: block;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    border-right: solid 1px $--color-table-border;
+                }
+
+                .i-table-toogle {
+                    position: relative;
+                }
+            }
+
+            background: #fff;
+            border: $--color-table-border;
+            border-bottom: solid 1px $--color-table-border;
+
+            .i-table-info {
+                height: 40px;
+                overflow: hidden;
+                transition: .3s ease-in;
+
+                &.active {
+                    transition: .3s ease-in;
+                    animation: EtableToglle .3s ease-in alternate forwards;
+                    -webkit-animation: EtableToglle .3s ease-in alternate forwards;
+                    box-shadow: 0 0 5px $--color-primary-hover;
+                }
+
+            }
+        }
+
+        .items5-1 {
+            border-bottom: solid 1px $--color-table-border;
+            border-right: solid 1px $--color-table-border;
+            padding: 10px 0;
+            text-indent: 10px;
+
+            &:hover {
+                box-shadow: 0 0 3px $--color-primary-hover;
+                background: $--color-table-header-bg;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+
+    .i-table-render-child {
+
+        .i-table-child-div,
+        .i-table-child-div:hover {
+            border-right: solid 1px transparent;
+            border-left: solid 1px transparent;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .i-table-children-info {
+            padding: 0 10px
+        }
+    }
+}

@@ -1,0 +1,97 @@
+@import './common/var.scss';
+@import './mixins/mixin.scss';
+@include b(input) {
+    display: inline-flex;
+    // border:solid 1px $--color-block;
+    border:solid 1px $--color-info;
+    border-radius: 4px;
+    overflow: hidden;
+    &.is-disabled {
+        cursor: no-drop;
+    }
+    input{
+        height: 100%;
+        padding: 0 10px;
+        &[disabled],&.is-loading{
+            cursor: not-allowed;
+            pointer-events: none;
+            >*{
+                pointer-events: none;
+            }
+        }
+    }
+  
+    &-textarea,&-passowrd{
+        .i-icon{
+            cursor: pointer;
+        }
+        display: inline-flex;
+        border:solid 1px $--color-info;
+        border-radius: 4px;
+        .i-input{
+            padding:10px;
+            &.is-disabled {
+                opacity: .8;
+            }
+        }
+    }
+   
+    &-textarea, &-passowrd {
+        
+        &[disabled],&.is-disabled{
+            cursor: not-allowed;
+            opacity: .5;
+            // background: rgb(170, 170, 170);
+        }
+        textarea,input{
+            border:none;
+        }
+    }
+    &-textarea{
+        border:none;
+        textarea{
+            border:solid 1px $--color-info;
+            border-radius: 4px;
+        }
+    }
+    @include h-size(large){
+        @include h($--size-large);
+    }
+    @include h-size(middle){
+        @include h($--size-middle);
+    }
+    @include h-size(small){
+        @include h($--size-small);
+       
+    }
+    &-group-prepend{
+        background: #fafafa;
+        text-align: center;
+        border-right: 1px solid #d9d9d9;
+        display: inline-block;
+        padding: 0px  12px;
+    }
+    &-group-append{
+        background: #fafafa;
+        text-align: center;
+        border-left: 1px solid #d9d9d9;
+        display: inline-block;
+    }
+    &-passowrd {
+        .i-ui-icons{
+            &-middle,&-large,&-small{
+                padding:0 5px;
+                font-size: 20px;
+            }
+            &-middle{
+                margin-top: 8px;
+            }
+            &-large{
+                margin-top: 13px;
+            }
+            &-small{
+                margin-top: 3px; 
+            }
+        }
+    }
+}

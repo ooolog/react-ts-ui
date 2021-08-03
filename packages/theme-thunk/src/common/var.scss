@@ -1,0 +1,120 @@
+@import '../mixins/config.scss';
+@import './animation.scss';
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #030303 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+
+$--color-header:#EFF2F7 !default;
+$--color-footer:#EDF0F1 !default;
+
+
+$--color-primary: #409EFF !default;
+$--color-white: #FFFFFF !default;
+$--color-black: #000000 !default;
+$--color-success: #67C23A !default;
+$--color-warning: #f0b30c !default;
+$--color-danger: #F56C6C !default;
+$--color-info: #d9d9d9 !default;
+
+$--color-primary-hover: #63a8ec !default;
+$--color-black-hover: #252424 !default;
+$--color-success-hover: #14d169 !default;
+$--color-warning-hover: #f3d2a0 !default;
+$--color-danger-hover: #fab3b3 !default;
+$--color-info-hover: #bfc3ca !default;
+
+$--color-table-header-bg:#E6EAEB !default;
+$--color-table-border:#F2F3F5 !default;
+
+$--size-small: 28px !default;
+$--size-middle: 38px !default;
+$--size-large: 48px !default;
+$small: 28px !default;
+$middle: 38px !default;
+$large: 48px !default;
+
+$sizeType:('large':$--size-large,
+    'middle':$--size-middle,
+    'small':$--size-small,
+);
+
+$font-family-sans-serif: -apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+"Helvetica Neue",
+Arial,
+"Noto Sans",
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol",
+"Noto Color Emoji" !default;
+$font-family-monospace: SFMono-Regular,
+Menlo,
+Monaco,
+Consolas,
+"Liberation Mono",
+"Courier New",
+monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+// 字体大小
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg: $font-size-base * 1.25 !default;
+$font-size-sm: $font-size-base * .875 !default;
+$font-size-root: null !default;
+
+// 链接
+$link-color: $--color-primary !default;
+$link-decoration: none !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+
+// 字重
+$font-weight-lighter: lighter !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: bolder !default;
+$font-weight-base: $font-weight-normal !default;
+
+// body
+
+$body-bg: $--color-white !default;
+$body-color: $gray-900 !default;
+$body-text-align: null !default;
+$border-width:                1px !default;
+$border-color:                $gray-300 !default;
+
+$menu-border-width:            $border-width !default;
+$menu-border-color:            $border-color !default;
+
+// options 可配置选项
+$enable-pointer-cursor-for-buttons: true !default;
+$btn-transition: color .15s ease-in-out,
+background-color .15s ease-in-out,
+border-color .15s ease-in-out,
+box-shadow .15s ease-in-out !default;
+
+// menu-item
+$menu-item-padding-y:          .5rem !default;
+$menu-item-padding-x:          1rem !default;
+$menu-item-active-color:       $--color-primary !default;
+$menu-item-active-border-width: 2px !default;
+$menu-box-shadow: inset 0 1px 0 rgba($--color-white, .15),
+0 1px 1px rgba($--color-black, .075) !default;
+$menu-transition: color .15s ease-in-out,
+border-color .15s ease-in-out !default;
+//submenu
+$submenu-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .12),
+0 0 6px 0 rgba(0, 0, 0, .04);
+
+//modal
+$modal-padding: 8px !default;

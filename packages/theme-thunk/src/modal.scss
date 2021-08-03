@@ -1,0 +1,116 @@
+@import './common/var.scss';
+@import './mixins/mixin.scss';
+@include b(modal){
+    &-potral{
+        bottom: 0;
+        left:0;
+        position: fixed;
+        right: 0;
+        top:0;
+        z-index: 1000;
+        .i-modal{
+            &-viewport{
+                margin:0 auto;
+                min-width: 320px;
+               
+                position: relative;
+                top:100px;
+                transition: all  0.5s cubic-bezier(0.23, 1, 0.32, 1);
+                width: 30%;
+                z-index: 1001;
+                background:$--color-white;
+                border-radius: 4px;
+            }
+            &-title{
+                background-color: $--color-header;
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+                .header-title{
+                    padding: 0 10px;
+                }
+            }
+            &-size{
+                @include h-size(small){
+                    @include h($--size-small);
+                    line-height: $--size-small;
+                }
+                @include h-size(large){
+                    @include h($--size-large);
+                    line-height: $--size-large;
+                    padding: 0 40px;
+                }
+                @include h-size(middle){
+                    @include h($--size-middle);
+                    line-height: $--size-middle;
+                    padding: 0 20px;
+                }
+            }
+            &-closebtn{
+                position: absolute;
+                right: -29px;
+                top: -23px;
+                cursor: pointer;
+                .i-icon{
+                    width: 25px;
+                    height: 25px;
+                    display: block;
+                    text-align: center;
+                    line-height: 25px;
+                    &:hover{
+                        color:$--color-danger !important;
+                        background-color: $--color-white !important;
+                        box-shadow: 0 0 5px $--color-info;
+                    }
+                }
+                
+               
+            }
+            &-children{
+                padding: 10px 20px ;
+            }
+            &-confirm{
+                text-align: right;
+                padding:$modal-padding ;
+                border-top: solid 1px $--color-footer;
+                .i-button{
+                    margin-right:  10px;
+                }
+            }
+            &-mask{
+                background-color: rgba(0,0,0,.45);
+                bottom: 0;
+                left:0;
+                position: fixed;
+                right: 0;
+                top:0;
+            }
+        }
+    }
+    &-animation-enter {
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) ;
+        .bigbear-modal-viewport{
+            transform: scale(0,0);
+        }
+    }
+    
+    &-animation-enter-done {
+        opacity: 1;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) ;
+        .bigbear-modal-viewport{
+            transform: scale(1,1);
+            transform-origin: center top;
+        }
+    }
+    &-animation-exit {
+        opacity: 1;
+        transition: all  0.3s cubic-bezier(0.23, 1, 0.32, 1) ;
+    
+    }
+    &-animation-exit-active {
+        opacity: 0;
+        transform-origin:center top;
+        transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1) ;
+    
+    }
+}

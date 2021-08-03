@@ -1,0 +1,79 @@
+@import '../common/var.scss';
+
+@mixin b($block){
+    $B:$namespace+'-'+$block;
+    .#{$B}{
+        box-sizing: border-box;
+        @content;
+    }
+}
+
+// .i-button.is-xx
+@mixin when($state) {
+    @at-root {
+        &.#{$state-prefix+$state} {
+            @content;
+        }
+    }
+}
+
+// &--primary => .i-button--primary
+@mixin m($modifier) {
+    @at-root {
+        #{&+$modifier-speartor+$modifier} {
+            @content;
+        }
+    }
+}
+
+@mixin sizeType($size) {
+    @each $type,
+    $value in $size {
+        &.#{$type} {
+            height: $value;
+        }
+    }
+}
+
+@mixin btton-type($color, $background-color, $border-color) {
+    color: $color;
+    background-color: $background-color;
+    border-color: $border-color;
+    &:focus,&.focus,&:active{
+        color: $color;
+        background-color: $background-color;
+        border-color: $border-color;   
+    }
+    @content;
+   
+}
+
+// 高度类型 large middle small
+@mixin h-size($size) {
+    @at-root {
+        #{&+'-'+$size} {
+            @content;
+        }
+    }
+}
+@mixin h-size1($size) {
+        #{&+'-'+$size} {
+            @content;
+        }
+}
+
+// 高度
+@mixin h($height) {
+    height: $height;
+}
+@mixin bRadius($radius:$border-radius) {
+    border-radius: $radius+$px;
+}
+
+@mixin cursor() {
+   cursor: pointer; 
+}
+
+@mixin boxShadow(){
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}

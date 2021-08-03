@@ -1,0 +1,32 @@
+@import './common/var.scss';
+@import './mixins/mixin.scss';
+@include b(layout) {
+    margin:0;
+    padding: 0;
+    text-align: left;
+    background: #f0f2f5;
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    min-height: 0;
+   
+    &-has-sider{
+        flex-direction: row;
+    }
+    &-header{
+        height: 60px;
+        flex: 0 0 auto;
+    }
+    &-content{
+        flex:auto;
+        // flex-basis: 300px;
+    }
+    &-footer{
+        font-size:16px;
+        padding: 24px 50px;;
+    }
+    &-sider{
+        // flex-basis: content;
+        position: relative;
+    }
+}

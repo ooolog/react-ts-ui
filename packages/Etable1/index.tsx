@@ -1,0 +1,1 @@
+export {default as ETable1} from './src/etable1';

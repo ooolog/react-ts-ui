@@ -1,0 +1,97 @@
+@import './common/var.scss';
+@import './mixins/mixin.scss';
+@include b(checkbox) {
+    background: #fff;
+    border:none;
+    // text-shadow: 1px 1px 4px $shadow1, -1px -1px 4px $shadow2;
+    display: inline-block;
+    padding: 5px;
+   
+    .checkbox-label{
+        cursor: pointer;
+        margin:0;
+        margin-left:5px;
+        margin-right: 5px;
+        position: relative;
+       
+        .checkbox-input{
+            opacity: 1;
+            position: absolute;
+            border:solid 1px $--color-primary;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .checkbox-dot {
+            display: inline-block;
+            position: relative;
+            vertical-align: sub;
+        }
+        .checkbox-dot::before{
+            content: '';
+            left:5px;
+            opacity: 0;
+            position: absolute;
+            top:5px;
+            transform:rotate(45deg) scale(0) translate(140%,-40%);
+            transition:all .2s cubic-bezier(.12,.4,.29,1.46) .1s;
+        }
+        .checkbox-dot::after{
+            content: '';
+            left:5px;
+            opacity: 0;
+            position: absolute;
+            top:5px;
+            transform:rotate(135deg) scale(0) translate(90%,-35%);
+            transition:all .2s cubic-bezier(.12,.4,.29,1.46) .1s;
+        }
+        .checkbox-dot.checkbox-active::before{
+            content: '';
+            left:5px;
+            opacity: 1;
+            position: absolute;
+            top:5px;
+            transform:rotate(45deg) scale(1) translate(140%,-40%);
+            transition:all .2s cubic-bezier(.12,.4,.29,1.46) .1s;
+        }
+        .checkbox-dot.checkbox-active::after{
+            content: '';
+            left:5px;
+            opacity: 1;
+            position: absolute;
+            top:5px;
+            transform:rotate(135deg) scale(1) translate(90%,-35%);
+            transition:all .2s cubic-bezier(.12,.4,.29,1.46) .1s;
+        }
+        .checkbox-value{
+            padding:5px;
+            // text-shadow: 1px 1px 4px $neu-whiteshadow1, -1px -1px 4px $neu-whiteshadow2;
+        }
+        .checkbox-active ~ .checkbox-value{
+            color:$--color-primary;
+            transition:all .2s cubic-bezier(.12,.4,.29,1.46) .1s;
+        }
+        &.checkbox-disabled{
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    }
+    @include h-size1(large){
+        @include h($--size-large);
+        line-height: $--size-large;
+        width: $--size-large;
+        padding: 0 40px;
+    }
+    @include h-size1(middle){
+        @include h($--size-middle);
+        line-height: $--size-middle;
+        padding: 0 20px;
+        width: $--size-middle;
+    }
+    @include h-size1(small){
+        @include h($--size-small);
+        line-height: $--size-small;
+        width: $--size-small;
+    }
+    
+}

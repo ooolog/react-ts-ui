@@ -1,0 +1,1 @@
+export {default as MaxMinInput} from './src/MaxMinInput'

@@ -1,0 +1,58 @@
+@import './common/var.scss';
+@import './mixins/mixin.scss';
+@include b(maxmin-input) {
+    // border:solid 1px red;
+    display: inline-flex;
+    display: flex;
+    .i-maxmin-span{
+        width: 30px;
+        background-color: $--color-info;
+        color:#fff;
+        text-align: center;
+        display: flex;
+        font-size: 24px;
+        justify-content: center;
+        align-items: center;
+        @include h-size(large){
+            @include h($--size-large);
+        }
+        @include h-size(middle){
+            @include h($--size-middle);
+        }
+        @include h-size(small){
+            @include h($--size-small);
+           
+        }
+    }
+    .min-input{
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .max-input{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .i-icon{
+        background-color: $--color-info;
+        color: $--color-white;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin-left: 5px;
+        box-shadow: 0 0 5px  $--color-info;
+        @include cursor();
+        opacity: 0;
+        transition: all .3s;
+    }
+    &:hover .i-icon{
+        opacity: 1;
+    }
+    &-disabled {
+        &:hover .i-icon{
+            opacity: 0;
+        }
+    }
+
+    
+}

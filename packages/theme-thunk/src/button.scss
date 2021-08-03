@@ -1,0 +1,142 @@
+@import './common/var.scss';
+@import './mixins/mixin.scss';
+@include b(button) {
+    display: inline-block;
+    // min-height: 28px;
+    outline: none;
+    border: none;
+    user-select: none;
+    padding:0 10px;
+    border-radius: 4px;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: $btn-transition;
+    &[disabled],&.is-loading{
+        cursor: not-allowed;
+        pointer-events: none;
+        >*{
+            pointer-events: none;
+        }
+    }
+    &-loading{
+        // color:red;
+        // loading
+        -webkit-animation: loading 1s infinite linear ;
+        -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+        transform-origin: center center;
+        margin-right: 5px;
+        pointer-events: none;
+    }
+    @include m(primary){
+        @include btton-type($--color-white,$--color-primary,$--color-primary){
+            &.is-disabled,&.is-loading{
+                cursor: not-allowed;
+                opacity: .4;
+            }
+            &.is-loading{
+                cursor: not-allowed;
+                pointer-events: none;
+            }
+        }
+        &:hover{
+            background:$--color-primary-hover;
+        }
+        
+    }
+    @include m(warning){
+        @include btton-type($--color-white,$--color-warning,$--color-warning){
+            &.is-disabled,&.is-loading{
+                cursor: not-allowed;
+                opacity: .4;
+            }
+            &.is-loading{
+                cursor: not-allowed;
+                pointer-events: none;
+            }
+        }
+        &:hover{
+            background:$--color-warning-hover;
+        }
+    }
+    @include m(danger){
+        @include btton-type($--color-white,$--color-danger,$--color-danger){
+            &.is-disabled,&.is-loading{
+                cursor: not-allowed;
+                opacity: .4;
+            }
+            &.is-loading{
+                cursor: not-allowed;
+                pointer-events: none;
+            }
+        }
+        &:hover{
+            background:$--color-danger-hover;
+        }
+    }
+    @include m(info){
+        @include btton-type($--color-white,$--color-info,$--color-info){
+            &.is-disabled,&.is-loading{
+                cursor: not-allowed;
+                opacity: .4;
+            }
+            &.is-loading{
+                cursor: not-allowed;
+                pointer-events: none;
+            }
+        }
+        &:hover{
+            background:$--color-info-hover;
+        }
+    }
+    @include m(success){
+        @include btton-type($--color-white,$--color-success,$--color-success){
+            &.is-disabled,&.is-loading{
+                cursor: not-allowed;
+                opacity: .4;
+            }
+            &.is-loading{
+                cursor: not-allowed;
+                pointer-events: none;
+            }
+        }
+        &:hover{
+            background:$--color-success-hover;
+        }
+    }
+    @include m(Link){
+        text-decoration: none;
+        color:$--color-primary;
+        display: inline-block;
+        border:solid 1px $--color-primary;
+        &.is-disabled,&.is-loading{
+            cursor: not-allowed;
+            opacity: .4;
+            pointer-events: none;
+        }
+        &.is-loading{
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        &:hover{
+            color: $--color-primary-hover;
+            border:solid 1px $--color-primary-hover;
+            text-decoration: none;
+        }
+    }
+    @include h-size(large){
+        @include h($--size-large);
+        line-height: $--size-large;
+        padding: 0 40px;
+    }
+    @include h-size(middle){
+        @include h($--size-middle);
+        line-height: $--size-middle;
+        padding: 0 20px;
+    }
+    @include h-size(small){
+        @include h($--size-small);
+        line-height: $--size-small;
+       
+    }
+}

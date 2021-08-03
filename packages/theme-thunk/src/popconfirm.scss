@@ -1,0 +1,45 @@
+@import './common/var.scss';
+@import './mixins/mixin.scss';
+
+    @include b(popconfirm){
+        &.i-modal-potral{
+            bottom: unset;
+            left:unset;
+            padding:0;
+            position: absolute;
+            right:unset;
+            top:unset;
+            white-space: nowrap;
+            border: solid 1px $--color-header;
+            box-shadow: 0 0 3px $--color-header;
+            border-radius: 4px;
+        }
+        .i-modal-viewport.i-popconfirm{
+            display: block;
+            margin: 0;
+            min-width: unset;
+            padding:4px;
+            position: unset;
+            width: unset;
+            padding: 0;
+            .i-modal-title.i-popconfirm{
+                font-size: $font-size-sm;
+                >span{
+                    display: inline-block;
+                    margin-right: 20px;
+                }
+            }
+            .i-modal-confirm.i-popconfirm{
+                font-size: $font-size-sm;
+                padding: 5px;
+            }
+            .i-modal-children {
+                padding:10px;
+            }
+        }
+    }
+
+
+.i-popconfirm-wrapper{
+    display: inline-block;
+}
